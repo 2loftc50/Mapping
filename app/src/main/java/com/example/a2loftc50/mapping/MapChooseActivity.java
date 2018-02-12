@@ -10,22 +10,23 @@ import android.widget.Button;
  * Created by 2loftc50 on 05/02/2018.
  */
 
-public class MapChooseActivity extends AppCompatActivity implements View.onClickListener {
+public class MapChooseActivity extends AppCompatActivity implements View.OnClickListener
+{
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map_choose);
 
-        Button regular = (Button)findViewById(R.id.btnRegular);
-        Button hikebikemap = (Button)findViewById(R.id.btnHikeBikeMap);
-
+        Button regular = (Button) findViewById(R.id.btnRegular);
         regular.setOnClickListener(this);
+        Button hikebikemap = (Button) findViewById(R.id.btnHikeBikeMap);
         hikebikemap.setOnClickListener(this);
+    }
 
-        public void onClick(View view)
+        public void onClick(View v)
         {
             Boolean hikeBike= false;
-            if (view.getId() == R.id.btnHikeBikeMap)
+            if (v.getId() == R.id.btnHikeBikeMap)
             {
                 hikeBike = true;
             }
@@ -36,6 +37,6 @@ public class MapChooseActivity extends AppCompatActivity implements View.onClick
             setResult(RESULT_OK, intent);
             finish();
         }
-    }
-
 }
+
+
